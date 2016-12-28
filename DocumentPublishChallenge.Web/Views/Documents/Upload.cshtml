@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+<div class="page-header">
+    <h2>Upload new document</h2>
+</div>
+<div class="form-group">
+    <input class="file-loading js-file" type="file" multiple data-min-file-count="1" name="postedFile">
+</div>
+@Html.ActionLink("My Documents","MyDocuments","Documents", new { @class="btn btn-default js-mydocuments-link", style="display: none"})
+<script>
+    $(function () {
+        var file = $(".js-file");
+
+        file.fileinput({
+            uploadUrl: "http://localhost:8080/api/document/upload",
+            uploadAsync: true,
+            allowedFileExtensions: ['txt', 'pdf']
+        });
+
+        file.on('fileuploaded', function() { $(".js-mydocuments-link").show(); });
+    })
+</script>

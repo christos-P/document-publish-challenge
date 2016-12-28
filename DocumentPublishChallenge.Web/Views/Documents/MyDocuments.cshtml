@@ -1,0 +1,31 @@
+﻿@model DocumentPublishChallenge.Web.Models.MyDocumentsViewModel
+
+@{
+    ViewBag.Title = "MyDocuments";
+}
+
+<div class="page-header">
+    <h2>My Documents</h2>
+</div>
+<div class="js-documents-container" display="style:none">
+    <table class="table table-stripped js-documents">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>created</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<div class="js-message" style="display:none">
+</div>
+@Html.ActionLink("Upload new", "upload", "documents", null, new { @class = "btn btn-primary" })
+<script id="document-template" type="text/template">
+    <tr>
+        <td data-id="{{id}}">{{name}}</td>
+        <td>{{created}}</td>
+    </tr>
+</script>
+<script src="~/lib/mustache.js/mustache.min.js"></script>
+<script src="~/Scripts/mydocuments.js"></script>

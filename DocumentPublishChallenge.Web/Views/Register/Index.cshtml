@@ -1,0 +1,40 @@
+﻿@model DocumentPublishChallenge.Web.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<form action="/" class="form-horizontal" method="post">
+    <div class="form-group">
+        <label class="control-label col-sm-3 col-md-2" for="Email">
+            Email
+            <span class="required">*</span>
+        </label>
+        <div class="col-sm-9 col-md-10">
+            <input class="form-control" id="Email" name="Email" type="text" value="">
+            <span class="help-inline">
+                <span class="field-validation-valid" data-valmsg-for="Email"></span>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-3 col-md-2" for="Password">
+            Password
+            <span class="required">*</span>
+        </label>
+        <div class="col-sm-9 col-md-10">
+            <input class="form-control" id="Password" name="Password" type="text" value="">
+            <span class="help-inline">
+                <span class="field-validation-valid" data-valmsg-for="Password"></span>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <span class="control-label col-sm-3 col-md-2"></span>
+        <div class="col-sm-9 col-md-10">
+            <button class="btn-default  btn" type="submit">Submit</button>
+        </div>
+    </div>
+</form>
