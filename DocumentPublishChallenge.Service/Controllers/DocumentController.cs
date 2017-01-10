@@ -56,7 +56,7 @@ namespace DocumentPublishChallenge.Service.Controllers
             if (uploadedFile != null)
             {
                 var publishMessageTpAwsTask = PublishMessageToAws(uploadedFile);
-                var insertDocumentTask = new DocumentContext().InsertDocument(
+                var insertDocumentTask = _documentRepo.InsertDocument(
                     new DocumentEntity
                     {
                         Id = new Guid(uploadedFile.Id),
