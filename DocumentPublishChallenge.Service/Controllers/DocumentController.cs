@@ -20,6 +20,13 @@ namespace DocumentPublishChallenge.Service.Controllers
 {
     public class DocumentController : ApiController
     {
+        private readonly IDocumentRepository _documentRepo;
+
+        public DocumentController(IDocumentRepository documentRepo)
+        {
+            _documentRepo = documentRepo;
+        }
+
         /// <summary>
         /// The Upload Endpoint 
         /// </summary>
@@ -67,11 +74,10 @@ namespace DocumentPublishChallenge.Service.Controllers
         /// </summary>
         /// <returns>It returns the documents that the user uploaded.</returns>
         [HttpGet]
-        public async Task<IHttpActionResult> GetUserDocuments()
+        public async Task<IHttpActionResult> GetUserDocuments(int userId)
         {
-            var documentContext = new DocumentContext();
             // Normally we should pass user id to retrieve his documents.
-            var documents = await documentContext.GetUserDocuments(1);
+            var documents = await _documentRepo.GetUserDocuments(userId);
             var documentCreationDateFormat = AppSettings["DocumentCreationDateFormat"];
             var formattedDocuments = documents.Select(document => new
             {

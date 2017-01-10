@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BaseContext.cs" />
     <Compile Include="DocumentContext.cs" />
+    <Compile Include="IDocumentRepository.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

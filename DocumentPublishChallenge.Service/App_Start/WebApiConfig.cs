@@ -1,5 +1,8 @@
 ﻿using System.Web.Http;
 using System.Web.Http.Cors;
+using DocumentPublishChallenge.DataAccessLayer;
+using DocumentPublishChallenge.Service.Code;
+using Microsoft.Practices.Unity;
 using static System.Configuration.ConfigurationManager;
 
 namespace DocumentPublishChallenge.Service
@@ -22,6 +25,10 @@ namespace DocumentPublishChallenge.Service
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional });
 
+            // https://www.asp.net/web-api/overview/advanced/dependency-injection
+            var container = new UnityContainer();
+            container.RegisterType<IDocumentRepository, DocumentContext>(new HierarchicalLifetimeManager());
+            config.DependencyResolver = new UnityResolver(container);
         }
     }
 }

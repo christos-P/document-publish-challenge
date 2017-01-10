@@ -6,7 +6,7 @@ using DocumentPublishChallenge.Domain;
 
 namespace DocumentPublishChallenge.DataAccessLayer
 {
-    public class DocumentContext : BaseContext
+    public class DocumentContext : BaseContext, IDocumentRepository
     {
         public async Task<int> InsertDocument(DocumentEntity document)
         {

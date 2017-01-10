@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentPublishChallenge.Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentPublishChallenge.DataAccessLayer", "DocumentPublishChallenge.DataAccessLayer\DocumentPublishChallenge.DataAccessLayer.csproj", "{82DEA678-2171-4A45-B311-B6B623B12AF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentPublishChallenge.Tests", "DocumentPublishChallenge.Tests\DocumentPublishChallenge.Tests.csproj", "{891D46E6-7D48-4AF1-AAE0-0B182E1AA051}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{82DEA678-2171-4A45-B311-B6B623B12AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82DEA678-2171-4A45-B311-B6B623B12AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82DEA678-2171-4A45-B311-B6B623B12AF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891D46E6-7D48-4AF1-AAE0-0B182E1AA051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891D46E6-7D48-4AF1-AAE0-0B182E1AA051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891D46E6-7D48-4AF1-AAE0-0B182E1AA051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891D46E6-7D48-4AF1-AAE0-0B182E1AA051}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
