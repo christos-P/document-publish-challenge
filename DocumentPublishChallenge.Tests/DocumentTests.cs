@@ -21,7 +21,7 @@ namespace DocumentPublishChallenge.Tests
         public async Task ValidateNumberOfDocunents()
         {
             // Arrange
-            var mockRepository = new Mock<IDocumentRepository>();
+            var mockRepository = new Mock<IDocumentRepository>(MockBehavior.Strict);
             mockRepository.Setup(m => m.GetUserDocuments(1))
                 .ReturnsAsync(new List<DocumentEntity>
                 {
@@ -46,6 +46,8 @@ namespace DocumentPublishChallenge.Tests
             Assert.IsNotNull(contentResult.Content);
             var documents = JsonConvert.DeserializeObject<IEnumerable<object>>(contentResult.Content);
             Assert.AreEqual(documents.Count(), 1);
+
+            mockRepository.Verify(x => x.GetUserDocuments(1), Times.Once);
         }
     }
 }
